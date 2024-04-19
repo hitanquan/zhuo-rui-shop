@@ -12,7 +12,7 @@
 			<CoustomSwiper :Data="shopBannerList" :fliterListData="shopFliterList"/>
 			<WellBeing :jiuList="jiuList"/>
 			<CategoryPanel :Data="shopCategoryList"/>
-			<CoustomCard :isSticky="isSticky" :goodList="shopGoodList" />
+			<CoustomCard :goodList="shopGoodList" />
 		</scroll-view>
 	</view>
 </template>
@@ -41,7 +41,6 @@
 			return {
 				isDisplayPageHeader: true,  // 是否显示页面头部组件
 				adDialogs: false, //是否显示弹窗广告
-				isSticky: false, //是否固定定位
 				navBarHeight: 0, // 状态栏高度
 				shopCategoryList: [
 					{
@@ -132,12 +131,6 @@
 					this.isDisplayPageHeader = false;
 				} else {
 					this.isDisplayPageHeader = true;
-				}
-				// 获取CoustomCard组件的滚动高度，判断是否划到了该组件的位置
-				console.log('scrollTop',scrollTop)	
-				if(opacity >= 4.7) {
-					this.isSticky = true;
-					console.log('opacity', opacity)
 				}
 			},
 		}

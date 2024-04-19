@@ -74,10 +74,6 @@
 			goodList: {
 				type: Array,
 				default: [],
-			},
-			isSticky: {
-				type: Boolean,
-				default: false
 			}
 		},
 		data() {
