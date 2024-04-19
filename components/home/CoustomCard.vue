@@ -3,7 +3,8 @@
 	<scroll-view
 	 	scroll-x
 		scroll-with-animation 
-		style="white-space: nowrap;"
+		style="white-space: nowrap; top: 0;"
+		class="sticky"
 	 >
 	 <view class="nav-tab">
 		 <view class="nav-tab-item">
@@ -24,7 +25,6 @@
 	 	scroll-y
 		scroll-with-animation 
 		@scroll="rightScroll"
-		:class="{'sticky': isSticky}"
 	 >
 		<view class="good">
 		 <navigator
@@ -93,7 +93,8 @@
 <style scoped lang="scss">
 .sticky {
 	position: sticky;
-	height: 980rpx;
+	z-index: 99;
+	background-color: #F2F5FA;
 }
 
 .card-container {
@@ -102,6 +103,7 @@
 	.nav-tab {
 		width: 718rpx;
 		height: 120rpx;
+		padding-top: 20rpx;
 		.nav-tab-item {
 			line-height: 1;
 			padding: 8rpx 0;
